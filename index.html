@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinayaka Vidya Mandir - Shaping Bright Futures</title>
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#FF6B35">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="VVM">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen for PWA -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-logo"><img src="Logo.png" alt="VVM"></div>
+        <div class="splash-text">Vinayaka Vidya Mandir</div>
+        <div class="loader-dots">
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+            <div class="loader-dot"></div>
+        </div>
+        <div class="loading-progress">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="loading-subtext" style="color: #000000;">Designed & Developed by <h3 style="font-family: cursive; color: var(--accent-blue); color: aliceblue;" >Deepak Raj</h3></div>
+    </div>
+    
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offlineIndicator">
+        <i class="fas fa-wifi"></i> You are currently offline
+    </div>
+    
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <div class="install-prompt-content">
+            <strong>Install VVM App</strong>
+            <p>Get the full app experience</p>
+        </div>
+        <button class="btn btn-primary" id="installButton">Install</button>
+        <button class="install-prompt-close" id="closeInstallPrompt">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading">
+        <div class="loading-content">
+            <div class="loading-text" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Vinayaka Vidya Mandir</div>
+            <div class="multi-loader">
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+                <div class="loader-circle"></div>
+            </div>
+            <div class="loader-dots">
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="loading-subtext">Designed & Developed by <h3 style="font-family: cursive; color: var(--accent-blue);" >Deepak Raj</h3></div>
+            <div class="loading-subtext">Preparing your learning journey...</div>
+        </div>
+    </div>
+    
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <img src="Logo.png" alt="VVM">
+                    </div>
+                    <div class="logo-text" style="font-family: 'Times New Roman', Times, serif;">Vinayaka Vidya Mandir</div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#academics" class="nav-link">Academics</a></li>
+                    <li><a href="#faculty" class="nav-link">Faculty</a></li>
+                    <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                    <li><a href="#student-zone" class="nav-link">Student</a></li>
+                    <li><a href="#results" class="nav-link">Results</a></li>
+                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#parent-zone" class="nav-link">Parent</a></li>
+                    <li><a href="#admissions" class="nav-link">Admissions</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <!-- <a href="#" class="login-btn">Login</a> -->
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Announcements Ticker -->
+    <section class="announcements">
+        <div class="container announcements-container">
+            <div class="announcements-label" style="font-family: cursive;">
+                <i class="fas fa-bullhorn"></i> Announcements:
+            </div>
+            <div class="announcements-marquee">
+                <div class="announcements-marquee-content">
+                    • Admissions for 2024-25 are now open! Apply before June 30th. &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    • Summer vacation begins on May 15th. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    • Annual Sports Day scheduled for March 25th. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    • Parent-Teacher Meeting on April 10th. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    • School reopens on June 1st after summer break. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    • Scholarship applications deadline: April 30th. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    • Cultural fest "Vidya Utsav" on February 20th. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Shaping Bright Futures with Knowledge & Values</h1>
+                <p>At Bright Future Academy, we nurture young minds to become confident, compassionate, and successful individuals ready to make a positive impact on the world.</p>
+                <div class="hero-buttons">
+                    <a href="#admissions" class="btn btn-primary">Apply Now</a>
+                    <a href="#about" class="btn btn-outline">Explore More</a>
+                    <a href="#" class="btn btn-secondary">Download Prospectus</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our School</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="school image.png" alt="Bright Future Academy Campus">
+                </div>
+                <div class="about-text">
+                    <h2>Welcome to Viniyaka Vidya Mandir</h2>
+                    <p>Established in 2025, Viniyaka Vidya Mandir has been at the forefront of providing quality education that combines academic excellence with character development.</p>
+                    <p>Our dedicated faculty and state-of-the-art facilities create an environment where students can thrive academically, socially, and emotionally.</p>
+                    <div class="mission-vision">
+                        <div class="mission card">
+                            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                            <p>To provide a nurturing environment that fosters academic excellence, critical thinking, and ethical values to prepare students for success in a rapidly changing world.</p>
+                        </div>
+                        <div class="vision card">
+                            <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                            <p>To be a leading educational institution recognized for developing innovative, compassionate, and globally-minded citizens who contribute positively to society.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section section-light parallax" style="background-image: url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item card card-3d">
+                    <div class="stat-number">1,200+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-item card card-3d">
+                    <div class="stat-number">85+</div>
+                    <div class="stat-label">Faculty Members</div>
+                </div>
+                <div class="stat-item card card-3d">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Graduation Rate</div>
+                </div>
+                <div class="stat-item card card-3d">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section class="section section-light" id="academics">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Academics</h2>
+            </div>
+            <div class="academics-grid">
+                <div class="academic-card card">
+                    <div class="academic-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Comprehensive Curriculum</h3>
+                    <p>Our curriculum is designed to challenge students while providing a solid foundation in core subjects and specialized areas of interest.</p>
+                    <a href="#" class="btn btn-outline">View Curriculum</a>
+                </div>
+                <div class="academic-card card">
+                    <div class="academic-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Expert Faculty</h3>
+                    <p>Our teachers are highly qualified professionals dedicated to inspiring students and fostering a love for learning.</p>
+                    <a href="#faculty" class="btn btn-outline">Meet Our Faculty</a>
+                </div>
+                <!-- <div class="academic-card card">
+                    <div class="academic-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>We celebrate consistent academic achievements with 95% of our graduates gaining admission to top universities worldwide.</p>
+                    <a href="#results" class="btn btn-outline">View Results</a>
+                </div> -->
+                <div class="academic-card card card-3d">
+                    <div class="academic-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Arts & Innovation</h3>
+                    <p>Fostering creativity through comprehensive arts education, design thinking, and innovation labs.</p>
+                    <a href="#" class="btn btn-outline">View Arts & Craft</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section class="section" id="faculty">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Faculty</h2>
+            </div>
+            <div class="faculty-grid">
+                <div class="faculty-card card">
+                    <div class="faculty-image">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Sarah Johnson">
+                    </div>
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p class="faculty-qualifications">PhD in Mathematics, 15 years experience</p>
+                    <p>Head of Mathematics Department</p>
+                </div>
+                <div class="faculty-card card">
+                    <div class="faculty-image">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Mr. Robert Chen">
+                    </div>
+                    <h3>Mr. Robert Chen</h3>
+                    <p class="faculty-qualifications">MSc in Physics, 12 years experience</p>
+                    <p>Head of Science Department</p>
+                </div>
+                <div class="faculty-card card">
+                    <div class="faculty-image">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ms. Emily Wilson">
+                    </div>
+                    <h3>Ms. Emily Wilson</h3>
+                    <p class="faculty-qualifications">MA in English Literature, 10 years experience</p>
+                    <p>Head of English Department</p>
+                </div>
+                <div class="faculty-card card">
+                    <div class="faculty-image">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Mr. David Brown">
+                    </div>
+                    <h3>Mr. David Brown</h3>
+                    <p class="faculty-qualifications">MEd in Educational Leadership, 20 years experience</p>
+                    <p>Principal</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="#" class="btn btn-primary">View All Faculty</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="section section-light" id="facilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Facilities</h2>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card card">
+                    <div class="facility-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science Labs</h3>
+                    <p>State-of-the-art laboratories for Physics, Chemistry, and Biology with modern equipment and safety measures.</p>
+                </div>
+                <div class="facility-card card">
+                    <div class="facility-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Library</h3>
+                    <p>Extensive collection of books, journals, and digital resources in a quiet, conducive learning environment.</p>
+                </div>
+                <div class="facility-card card">
+                    <div class="facility-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Computer Lab</h3>
+                    <p>Modern computer lab with high-speed internet and the latest software for technology education.</p>
+                </div>
+                <div class="facility-card card">
+                    <div class="facility-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Sports Complex</h3>
+                    <p>Spacious playground, indoor sports facilities, and swimming pool for physical education and extracurricular activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Zone Section -->
+    <section class="section" id="student-zone">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Zone</h2>
+            </div>
+            <div class="student-zone-grid">
+                <div class="student-card card">
+                    <div class="student-icon">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <h3>Class Timetable</h3>
+                    <p>Access your daily class schedule and stay organized with our easy-to-use timetable system.</p>
+                    <a href="#" class="btn btn-outline">View Timetable</a>
+                </div>
+                <div class="student-card card">
+                    <div class="student-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Homework & Assignments</h3>
+                    <p>Check daily homework assignments and submission deadlines to stay on top of your studies.</p>
+                    <a href="#" class="btn btn-outline">View Assignments</a>
+                </div>
+                <div class="student-card card">
+                    <div class="student-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>Study Materials</h3>
+                    <p>Access a wealth of study resources, notes, and reference materials for all subjects.</p>
+                    <a href="#" class="btn btn-outline">Access Materials</a>
+                </div>
+                <div class="student-card card">
+                    <div class="student-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Exam Schedule</h3>
+                    <p>View upcoming exam dates, syllabus, and preparation guidelines for all classes.</p>
+                    <a href="#" class="btn btn-outline">View Schedule</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section section-light" id="results">
+        <div class="container">
+            <div class="section-title">
+                <h2>Results & Reports</h2>
+            </div>
+            <div class="results-container">
+                <div class="results-form card">
+                    <h3>Check Your Results</h3>
+                    <p>Enter your details to access your exam results and academic reports.</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="student-id">Student ID</label>
+                            <input type="text" id="student-id" class="form-control" placeholder="Enter your student ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="exam-type">Exam Type</label>
+                            <select id="exam-type" class="form-control">
+                                <option value="">Select Exam Type</option>
+                                <option value="midterm">Mid-Term Exams</option>
+                                <option value="final">Final Exams</option>
+                                <option value="annual">Annual Exams</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="academic-year">Academic Year</label>
+                            <select id="academic-year" class="form-control">
+                                <option value="">Select Academic Year</option>
+                                <option value="2022-23">2022-23</option>
+                                <option value="2021-22">2021-22</option>
+                                <option value="2020-21">2020-21</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">View Results</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parent Zone Section -->
+    <section class="section" id="parent-zone">
+        <div class="container">
+            <div class="section-title">
+                <h2>Parent Zone</h2>
+            </div>
+            <div class="parent-zone-grid">
+                <div class="parent-card card">
+                    <div class="parent-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Parent-Teacher Meetings</h3>
+                    <p>Schedule and keep track of parent-teacher meetings to stay involved in your child's education.</p>
+                    <a href="#" class="btn btn-outline">View Schedule</a>
+                </div>
+                <div class="parent-card card">
+                    <div class="parent-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3>Feedback & Suggestions</h3>
+                    <p>Share your feedback and suggestions to help us improve our educational services.</p>
+                    <a href="#" class="btn btn-outline">Provide Feedback</a>
+                </div>
+                <div class="parent-card card">
+                    <div class="parent-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>School Policies</h3>
+                    <p>Access important school policies, rules, and guidelines for students and parents.</p>
+                    <a href="#" class="btn btn-outline">View Policies</a>
+                </div>
+                <div class="parent-card card">
+                    <div class="parent-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Progress Reports</h3>
+                    <p>Access your child's academic progress reports and performance analytics.</p>
+                    <a href="#" class="btn btn-outline">View Reports</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra Features Section -->
+    <section class="section section-light" id="extra-features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Extra Features</h2>
+            </div>
+            <div class="extra-features-grid">
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>Transport Services</h3>
+                    <p>Safe and reliable bus transportation with well-defined routes and schedules.</p>
+                    <a href="#" class="btn btn-outline">View Routes</a>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-house"></i>
+                    </div>
+                    <h3>Hostel</h3>
+                    <p>Healthy and nutritious meals prepared daily with a focus on balanced nutrition.</p>
+                    <a href="#" class="btn btn-outline">View Menu</a>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App</h3>
+                    <p>Stay connected with our school mobile app for notifications and updates.</p>
+                    <a href="#" class="btn btn-outline">Download App</a>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3>E-Learning</h3>
+                    <p>Access online classes, resources, and virtual learning platforms.</p>
+                    <a href="#" class="btn btn-outline">Access Portal</a>
+                </div>
+                <!-- <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Smart Classrooms</h3>
+                    <p>Technology-enhanced learning spaces with interactive whiteboards and digital learning tools.</p>
+                    <a href="#" class="btn btn-outline">Access Portal</a>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-light" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What People Say</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial-card card">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Parent">
+                        </div>
+                        <div class="testimonial-text">
+                            "Bright Future Academy has been a wonderful experience for my daughter. The teachers are dedicated, and the curriculum challenges her while making learning enjoyable."
+                        </div>
+                        <div class="testimonial-author">Sarah Johnson</div>
+                        <div class="testimonial-role">Parent</div>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student">
+                        </div>
+                        <div class="testimonial-text">
+                            "I love coming to school every day! The facilities are amazing, and the teachers make every subject interesting. The sports programs have helped me develop both physically and mentally."
+                        </div>
+                        <div class="testimonial-author">Michael Chen</div>
+                        <div class="testimonial-role">Grade 10 Student</div>
+                    </div>
+                    <div class="testimonial-card card">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Teacher">
+                        </div>
+                        <div class="testimonial-text">
+                            "Teaching at Bright Future Academy is incredibly rewarding. The administration supports innovative teaching methods, and the students are enthusiastic learners. It's a positive environment for both students and staff."
+                        </div>
+                        <div class="testimonial-author">Dr. Emily Rodriguez</div>
+                        <div class="testimonial-role">Science Teacher</div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slider-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+            </div>
+            <div class="events-slider">
+                <div class="event-card card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Science Fair">
+                        <div class="event-date">Mar 25, 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Annual Science Fair</h3>
+                        <p>Showcasing innovative projects by our talented students in the field of science and technology.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="event-card card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Sports Day">
+                        <div class="event-date">Apr 10, 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Sports Day</h3>
+                        <p>Annual inter-house sports competition with various athletic events and team games.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="event-card card">
+                    <div class="event-image">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80" alt="Art Exhibition">
+                        <div class="event-date">May 5, 2023</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Art & Culture Exhibition</h3>
+                        <p>Celebrating creativity with student artwork, performances, and cultural displays.</p>
+                        <a href="#" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section parallax">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--white);">Our Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Art Class">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Classroom">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Science Lab">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Library">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <!-- <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2090&q=80" alt="Basketball">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div> -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1462536943532-57a629f6cc60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="School Event">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Event">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <a href="#" class="btn btn-primary">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section class="section" id="admissions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admissions</h2>
+            </div>
+            <div class="admissions-content">
+                <div class="admissions-info">
+                    <h2>Join Our Community</h2>
+                    <p>We welcome applications from students who demonstrate academic potential, curiosity, and a commitment to personal growth.</p>
+                    <p>Our admission process is designed to identify students who will thrive in our challenging and supportive learning environment.</p>
+                    <div class="mission-vision">
+                        <div class="mission card">
+                            <h3><i class="fas fa-info-circle"></i> Admission Process</h3>
+                            <p>1. Submit online application form</p>
+                            <p>2. Entrance assessment</p>
+                            <p>3. Student and parent interview</p>
+                            <p>4. Admission decision</p>
+                            <p>5. Enrollment completion</p>
+                        </div>
+                        <div class="vision card">
+                            <h3><i class="fas fa-download"></i> Download Resources</h3>
+                            <p><a href="#"><i class="fas fa-file-pdf"></i> Prospectus 2023-24</a></p>
+                            <p><a href="#"><i class="fas fa-file-pdf"></i> Fee Structure</a></p>
+                            <p><a href="#"><i class="fas fa-file-pdf"></i> Admission Guidelines</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="admissions-form card">
+                    <h3>Admission Enquiry Form</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="parent-name">Parent/Guardian Name</label>
+                            <input type="text" id="parent-name" class="form-control" placeholder="Enter full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" class="form-control" placeholder="Enter student name">
+                        </div>
+                        <div class="form-group">
+                            <label for="grade">Grade Applying For</label>
+                            <select id="grade" class="form-control">
+                                <option value="">Select Grade</option>
+                                <option value="pre-k">Pre-Kindergarten</option>
+                                <option value="k">Kindergarten</option>
+                                <option value="1">Grade 1</option>
+                                <option value="2">Grade 2</option>
+                                <option value="3">Grade 3</option>
+                                <option value="4">Grade 4</option>
+                                <option value="5">Grade 5</option>
+                                <option value="6">Grade 6</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                                <option value="12">Grade 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message/Questions</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Enter your message or questions"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you. Reach out with any questions or to schedule a campus tour.</p>
+                    <div class="contact-item card card-3d">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Our Location</h3>
+                            <p>123 Education Lane, Learning City, LC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item card card-3d">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone Number</h3>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item card card-3d">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Address</h3>
+                            <p>info@brightfutureacademy.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-item card card-3d">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Office Hours</h3>
+                            <p>Monday - Friday: 6:00 AM - 6:00 PM</p>
+                            <p>Saturday - Sunday: 8:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="map-container card card-3d">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.7696995377196!2d85.45273927605616!3d25.278331528408366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f28d0b8bd4364d%3A0xecfe93c8a602bf82!2sMahaveer%20Traders!5e0!3m2!1sen!2sin!4v1759389083111!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="bottom-nav">
+        <a href="#home" class="bottom-nav-item active">
+            <i class="fas fa-home bottom-nav-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="#academics" class="bottom-nav-item">
+            <i class="fas fa-book-open bottom-nav-icon"></i>
+            <span>Academics</span>
+        </a>
+        <a href="#student-zone" class="bottom-nav-item">
+            <i class="fas fa-user-graduate bottom-nav-icon"></i>
+            <span>Student</span>
+        </a>
+        <a href="#parent-zone" class="bottom-nav-item">
+            <i class="fas fa-users bottom-nav-icon"></i>
+            <span>Parent</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item">
+            <i class="fas fa-phone bottom-nav-icon"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <div class="logo-icon">VVM</div>
+                        <div class="logo-text" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Vinayaka Vidya Mandir</div>
+                    </div>
+                    <p>Shaping bright futures through quality education, character development, and holistic growth since 1995.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-container">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#home">Home</a></li>
+                        <li class="footer-link"><a href="#about">About Us</a></li>
+                        <li class="footer-link"><a href="#academics">Academics</a></li>
+                        <li class="footer-link"><a href="#faculty">Faculty</a></li>
+                        <li class="footer-link"><a href="#admissions">Admissions</a></li>
+                        <li class="footer-link"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-container">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">Student Portal</a></li>
+                        <li class="footer-link"><a href="#">Parent Portal</a></li>
+                        <li class="footer-link"><a href="#">E-Library</a></li>
+                        <li class="footer-link"><a href="#">Academic Calendar</a></li>
+                        <li class="footer-link"><a href="#">School Policies</a></li>
+                        <li class="footer-link"><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p>Subscribe to our newsletter to receive updates about school events and important announcements.</p>
+                    <!-- <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form> -->
+                    <h3 style="font-family: cursive;">A Unit of Science Arena</h3>
+                </div>
+            </div>
+            <div class="developer-signature">
+                <p class="copy">&copy; 2025 Vinayaka Vidya Mandir. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>Designed & Developed with ❤️ by <span class="dev-name">Deepak Raj</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auto-Reply Modal -->
+    <div class="auto-reply-modal" id="autoReplyModal">
+        <div class="auto-reply-content">
+            <div class="auto-reply-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 class="auto-reply-title">Thank You!</h2>
+            <p class="auto-reply-message">Your message has been received successfully. We'll get back to you shortly.</p>
+            
+            <div class="auto-reply-details">
+                <div class="detail-item">
+                    <span class="detail-label">Reference ID:</span>
+                    <span class="detail-value" id="referenceId">VVM-2024-001</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Response Time:</span>
+                    <span class="detail-value">Within 24 hours</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Contact:</span>
+                    <span class="detail-value">info@vinayakavidyamandir.edu</span>
+                </div>
+            </div>
+            
+            <div class="auto-reply-actions">
+                <button class="auto-reply-btn auto-reply-btn-primary" onclick="closeAutoReply()">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+                <button class="auto-reply-btn auto-reply-btn-secondary" onclick="sendSMSNotification()">
+                    <i class="fas fa-sms"></i> Get SMS Update
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Bot -->
+    <div class="chat-bot">
+        <div class="chat-bot-container" id="chatBot">
+            <div class="chat-header">
+                <div class="chat-header-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.1rem;">VVM Assistant</h3>
+                    <p style="margin: 0; font-size: 0.8rem; opacity: 0.8;">Online - Ready to help</p>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message message-bot">
+                    <p>Hello! I'm your VVM assistant. How can I help you today?</p>
+                    <div class="quick-reply-buttons">
+                        <button class="quick-reply-btn" onclick="quickReply('admissions')">Admissions Info</button>
+                        <button class="quick-reply-btn" onclick="quickReply('fees')">Fee Structure</button>
+                        <button class="quick-reply-btn" onclick="quickReply('contact')">Contact Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" class="chat-input-field" id="chatInput" placeholder="Type your message...">
+                <button class="chat-send-btn" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chat-bot-toggle" onclick="toggleChatBot()">
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
